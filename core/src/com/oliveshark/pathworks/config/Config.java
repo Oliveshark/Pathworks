@@ -35,10 +35,6 @@ public class Config {
             GRID_WIDTH = config.get("GRID_WIDTH") != null ? config.get("GRID_WIDTH").asInt() : 32;
             GRID_HEIGHT= config.get("GRID_HEIGHT") != null ? config.get("GRID_HEIGHT").asInt() : 24;
             TILE_DIMENSION= config.get("TILE_DIMENSION") != null ? config.get("TILE_DIMENSION").asInt() : 32;
-            System.out.println(GRID_WIDTH);
-            System.out.println(GRID_HEIGHT);
-
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
