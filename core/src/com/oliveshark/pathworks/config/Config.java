@@ -8,36 +8,33 @@ import java.io.FileNotFoundException;
 
 
 public class Config {
-    private static final String CONFIG_FILE = "core/src/com/oliveshark/pathworks/config/config.json";
-
-    private static int GRID_WIDTH = 32;
-    private static int GRID_HEIGHT = 24;
-    private static int TILE_DIMENSION = 32;
+    private static int gridWidth = 32;
+    private static int gridHeight = 24;
+    private static int tileDimension = 32;
 
     public static int getTileDimension() {
-        return TILE_DIMENSION;
+        return tileDimension;
     }
 
     public static int getGridHeight() {
-        return GRID_HEIGHT;
+        return gridHeight;
     }
 
     public static int getGridWidth() {
-        return GRID_WIDTH;
+        return gridWidth;
     }
 
     public static void load(){
         JsonReader reader = new JsonReader();
-        JsonValue config = null;
+        JsonValue config;
 
         try {
-            config = reader.parse(new FileInputStream(CONFIG_FILE));
-            GRID_WIDTH = config.get("GRID_WIDTH") != null ? config.get("GRID_WIDTH").asInt() : 32;
-            GRID_HEIGHT= config.get("GRID_HEIGHT") != null ? config.get("GRID_HEIGHT").asInt() : 24;
-            TILE_DIMENSION= config.get("TILE_DIMENSION") != null ? config.get("TILE_DIMENSION").asInt() : 32;
+            config = reader.parse(new FileInputStream("config.json"));
+            gridWidth = config.get("GRID_WIDTH") != null ? config.get("GRID_WIDTH").asInt() : gridWidth;
+            gridHeight = config.get("GRID_HEIGHT") != null ? config.get("GRID_HEIGHT").asInt() : gridHeight;
+            tileDimension = config.get("TILE_DIMENSION") != null ? config.get("TILE_DIMENSION").asInt() : tileDimension;
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
 
     }
