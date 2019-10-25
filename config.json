@@ -1,0 +1,5 @@
+{
+  "GRID_WIDTH" : 32,
+  "GRID_HEIGHT": 24,
+  "TILE_DIMENSION": 32
+}

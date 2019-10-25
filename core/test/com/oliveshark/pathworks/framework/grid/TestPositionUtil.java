@@ -1,14 +1,16 @@
 package com.oliveshark.pathworks.framework.grid;
 
 import com.badlogic.gdx.math.Vector2;
+import com.oliveshark.pathworks.config.Config;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.oliveshark.pathworks.config.Config.GRID_HEIGHT;
-import static com.oliveshark.pathworks.config.Config.GRID_WIDTH;
-import static com.oliveshark.pathworks.config.Config.TILE_DIMENSION;
 
 class TestPositionUtil {
+    private static int GRID_HEIGHT = Config.getGridHeight();
+    private static int GRID_WIDTH = Config.getGridWidth();
+    private static int TILE_DIMENSION = Config.getTileDimension();
+
 
     @Test
     void testGetGridPositionFromScreenPosition() {

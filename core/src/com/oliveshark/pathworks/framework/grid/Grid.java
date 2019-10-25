@@ -9,12 +9,14 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.oliveshark.pathworks.framework.ViewStage;
-
-import static com.oliveshark.pathworks.config.Config.GRID_HEIGHT;
-import static com.oliveshark.pathworks.config.Config.GRID_WIDTH;
-import static com.oliveshark.pathworks.config.Config.TILE_DIMENSION;
+import com.oliveshark.pathworks.config.Config;
 
 public class Grid extends Actor {
+
+    private static int GRID_WIDTH = Config.getGridWidth();
+    private static int GRID_HEIGHT = Config.getGridHeight();
+    private static int TILE_DIMENSION = Config.getTileDimension();
+
 
     private Cell[][] cells;
     private Texture tileTexture;

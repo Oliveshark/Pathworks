@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.oliveshark.pathworks.config.Config;
 import com.oliveshark.pathworks.framework.entities.Agent;
 import com.oliveshark.pathworks.framework.entities.PointerIndicator;
 import com.oliveshark.pathworks.framework.grid.Grid;
@@ -18,11 +19,10 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.oliveshark.pathworks.config.Config.TILE_DIMENSION;
 import static com.oliveshark.pathworks.framework.grid.util.Rectangle.createSquare;
 
 public class ViewStage extends Stage {
-
+    private static int TILE_DIMENSION = Config.getTileDimension();
     private Grid grid;
     private PointerIndicator pointerIndicator;
 
