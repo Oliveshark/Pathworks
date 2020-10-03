@@ -153,7 +153,6 @@ public class ViewStage extends Stage {
     @Override
     public void draw() {
         super.draw();
-        CollisionController.get().drawColliders(shapeRenderer);
         if (currentAgent != null) {
             Batch batch = getBatch();
             batch.begin();

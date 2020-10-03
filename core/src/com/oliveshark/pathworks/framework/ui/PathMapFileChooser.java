@@ -17,7 +17,7 @@ public class PathMapFileChooser {
     public PathMapFileChooser(NativeFileChooser nativeFileChooser) {
         this.nativeFileChooser = nativeFileChooser;
         conf.directory = Gdx.files.absolute(System.getProperty("user.dir") + "/storage");
-        conf.nameFilter = (dir, name) -> name.endsWith("\\.pathMap");
+        conf.nameFilter = (dir, name) -> name.endsWith(".pathMap");
         conf.title = "Choose pathMap location";
     }
 
