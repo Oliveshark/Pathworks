@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.oliveshark.pathworks.framework.algorithm.def.AgentUserData;
+import com.oliveshark.pathworks.framework.collision.CollisionController;
 
 import java.util.Random;
 
@@ -28,6 +29,8 @@ public class Agent extends Actor {
         setName("agent");
     }
 
+
+
     private Color generateRandomColor() {
         Random random = new Random(System.nanoTime());
         final int colorUpperBound = 256;
@@ -44,8 +47,16 @@ public class Agent extends Actor {
     @Override
     public void act(float delta) {
         super.act(delta);
+        float lastX = getX();
+        float lastY = getY();
         setX(getX() + velocity.x * delta);
+        if (CollisionController.get().hasCollided(this)) {
+            setX(lastX);
+        }
         setY(getY() + velocity.y * delta);
+        if (CollisionController.get().hasCollided(this)) {
+            setY(lastY);
+        }
     }
 
     @Override

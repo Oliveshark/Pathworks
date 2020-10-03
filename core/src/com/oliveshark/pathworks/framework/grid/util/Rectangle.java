@@ -44,6 +44,22 @@ public class Rectangle {
                 || y <= r.y - r.h || y - h >= r.y);
     }
 
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public float getW() {
+        return w;
+    }
+
+    public float getH() {
+        return h;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

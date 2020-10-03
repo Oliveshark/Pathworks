@@ -69,6 +69,10 @@ public class Grid extends Actor {
         return cells[(int)pos.x][(int)pos.y];
     }
 
+    public Cell[][] getCells() {
+        return cells;
+    }
+
     public boolean isCellOccupied(Vector2 pos) {
         return cells[(int)pos.x][(int)pos.y].isOccupied();
     }
